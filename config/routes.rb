@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get '/auth/:provider/callback', to: 'sessions#create'
   # get '/new_user' => 'users#new'
   # resources :user
   # The priority is based upon order of creation: first created -> highest priority.
