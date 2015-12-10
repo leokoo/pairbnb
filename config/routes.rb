@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
+<<<<<<< HEAD
   match "/auth/:provider/callback" => "sessions#create_from_omniauth"
+=======
+  get '/auth/:provider/callback', to: 'sessions#create'
+>>>>>>> origin/master
   # get '/new_user' => 'users#new'
   # resources :user
   # The priority is based upon order of creation: first created -> highest priority.
