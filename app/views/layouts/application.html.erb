@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<div class = "container-fluid">
 <html>
 <head>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= csrf_meta_tags %>
 </head>
 <body>
   <div id="header">
@@ -13,6 +15,7 @@
        <%= link_to t(".sign_in with facebook"), '/auth/facebook' %>
     <% end -%>
   </div>
+  <button class="btn-primary btn">Like</button>
 
   <div id="flash">
     <% flash.each do |key, value| -%>
@@ -23,3 +26,4 @@
   <%= yield %>
 </body>
 </html>
+</div>
