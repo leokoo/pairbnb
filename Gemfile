@@ -31,6 +31,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 
+# To activate bootstrap as a gem
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
