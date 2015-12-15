@@ -4,7 +4,7 @@ class PluginsController < ApplicationController
 	end
 	
 	def create
-    @plugin = Plugin.new(plugin_params)
+    @plugin = current_user.plugins.new(plugin_params)
     
      if @plugin.save
      	redirect_to @plugin #show_path -- show.
