@@ -1,8 +1,15 @@
 class PluginsController < ApplicationController
-	def new
+  before_action :set_plugin, only: [:show, :edit, :update, :destroy]
+
+	def index
+		@plugins = Plugin.all
 		@plugin = Plugin.new
 	end
 	
+	def new
+		@plugin = Plugin.new
+	end
+
 	def create
     @plugin = current_user.plugins.new(plugin_params)
     
@@ -13,9 +20,27 @@ class PluginsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+ 	def edit
+ 	end
+
+ 	def update
+ 		if @plugin.update(plugin_params)
+ 			redirect_to @plugin
+ 		else
+ 			render :edit
+ 		end
+ 	end
+
 	private
 	def plugin_params
 		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature)
+	end
+
+	def set_plugin
+		@plugin = Plugin.find(params[:id])
 	end
 
 end
