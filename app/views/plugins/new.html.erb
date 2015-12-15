@@ -1,4 +1,4 @@
-<%= form_for @plugin, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+<%= form_for @plugin, url: {action: "create"} do |f| %>
 	Plugin name <br>
   <%= f.text_field :plugin_name %><br>
   Plugin description <br>
@@ -9,3 +9,4 @@
   <%= f.text_area :plugin_feature, size: "60x12" %><br>
   <%= f.submit "Create" %>
 <% end %>
+

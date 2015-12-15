@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   include Clearance::User
   has_many :authentications, :dependent => :destroy
   
@@ -20,4 +19,5 @@ class User < ActiveRecord::Base
     true
   end
 
+  has_many :plugins
 end
