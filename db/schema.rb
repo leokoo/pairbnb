@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151215040624) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authentications", force: :cascade do |t|
     t.string  "provider"
     t.string  "uid"
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20151215040624) do
     t.string   "remember_token",     limit: 128
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

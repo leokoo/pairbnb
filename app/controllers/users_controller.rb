@@ -4,4 +4,7 @@ class UsersController < Clearance::UsersController
   def index
     current_user.articles
   end
+
+  def dashboard
+  end
 end
