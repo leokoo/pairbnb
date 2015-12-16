@@ -37,6 +37,7 @@ class PluginsController < ApplicationController
  		@plugin.destroy
 
  		redirect_to plugins_path
+ 	end
 
 	private
 	def plugin_params
@@ -46,5 +47,4 @@ class PluginsController < ApplicationController
 	def set_plugin
 		@plugin = Plugin.find(params[:id])
 	end
-
 end

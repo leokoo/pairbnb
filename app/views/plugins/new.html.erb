@@ -1,12 +1,6 @@
-<%= form_for @plugin, url: {action: "create"} do |f| %>
-	Plugin name <br>
-  <%= f.text_field :plugin_name %><br>
-  Plugin description <br>
-  <%= f.text_area :plugin_description, size: "60x12" %><br>
-  URL <br>
-  <%= f.text_field :website_address %><br>
-  Plugin Feature <br>
-  <%= f.text_area :plugin_feature, size: "60x12" %><br>
-  <%= f.submit "Create" %>
-<% end %>
+<h1>New Plugin</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', plugins_path %>
 

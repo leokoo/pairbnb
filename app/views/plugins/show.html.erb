@@ -1,1 +1,7 @@
-Name of Plugin : <%= @plugin.plugin_name %><br>
+<p>
+	<strong>Name of Plugin : </strong>
+	<%= @plugin.plugin_name %>
+</p>
+
+<%= link_to 'Edit', edit_plugin_path(@plugin) %> |
+<%= link_to 'Back', plugins_path %>
