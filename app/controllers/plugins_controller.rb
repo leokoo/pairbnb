@@ -7,6 +7,7 @@ class PluginsController < ApplicationController
 	
 	def new
 		@plugin = Plugin.new
+		@plugin.categories.new
 	end
 
 	def create
