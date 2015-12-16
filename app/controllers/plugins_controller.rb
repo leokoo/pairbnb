@@ -1,6 +1,5 @@
 class PluginsController < ApplicationController
   before_action :set_plugin, only: [:show, :edit, :update, :destroy]
-
 	def index
 		@plugins = Plugin.all
 		@plugin = Plugin.new
@@ -33,6 +32,11 @@ class PluginsController < ApplicationController
  			render :edit
  		end
  	end
+
+ 	def destroy
+ 		@plugin.destroy
+
+ 		redirect_to plugins_path
 
 	private
 	def plugin_params
