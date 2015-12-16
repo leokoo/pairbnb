@@ -8,7 +8,4 @@ class ApplicationController < ActionController::Base
   def index
     current_user.articles
   end
-
-
-  
 end
