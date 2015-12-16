@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215040624) do
+ActiveRecord::Schema.define(version: 20151216080407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 20151215040624) do
     t.integer "user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "plugin_categories", force: :cascade do |t|
+    t.integer  "plugin_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "plugins", force: :cascade do |t|
     t.string   "plugin_name"
     t.string   "plugin_description"
@@ -31,6 +45,14 @@ ActiveRecord::Schema.define(version: 20151215040624) do
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.integer  "price"
+    t.integer  "subscription_period"
+    t.integer  "plugin_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "users", force: :cascade do |t|
