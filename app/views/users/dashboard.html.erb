@@ -1,7 +1,8 @@
 <h1>Welcome to the dashboard !</h1><br>
 
-<a href="/plugins/new">Add A Plugin</a><br>
-<a href="#">Show All Of Your Listed Plugins</a><br>
-<a href="#">Show Your Purchased/Booked Plugins</a><br>
-<a href="#">Profile</a><br>
+<% if current_user %>
+	<%= link_to 'My Plugins', controller: 'plugins' %> <br>
+	<%= link_to 'New Plugin', new_plugin_path %><br>
+<% else %>
+<% end %>
 
