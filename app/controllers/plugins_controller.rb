@@ -12,6 +12,7 @@ class PluginsController < ApplicationController
 
 	def create
     @plugin = current_user.plugins.new(plugin_params)
+    @plugin.categories.first.user_id = current_user.id
     
      if @plugin.save
      	redirect_to @plugin #show_path -- show.
@@ -42,7 +43,7 @@ class PluginsController < ApplicationController
 
 	private
 	def plugin_params
-		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature)
+		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [:name])
 	end
 
 	def set_plugin
