@@ -20,13 +20,6 @@
 </p>
 
 <p>
-  <%= f.label :category %>
-  <%= f.fields_for :categories do |p| %>
-    <%= p.text_area :body, placeholder: "Add a comment", rows: 10 %>
-  <% end %>
-</p>
-
-<p>
   <%= f.label :plugin_description %>
   <%= f.text_area :plugin_description, size: "60x12" %>
 </p>
