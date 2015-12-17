@@ -24,6 +24,20 @@
   <%= f.text_area :plugin_description, size: "60x12" %>
 </p>
 
+<p>
+  <ul>
+    <%= f.label :choose_from_current_plugin_categories %>
+    <%= f.fields_for :categories do |category| %>
+      <% form_categories = Category.all %>
+      <% form_categories.each do |cat| %>
+      <li>
+        <%= category.check_box(cat.name) %>
+        <%= cat.name %><br>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</p>
 
 <p>
   <ul>
