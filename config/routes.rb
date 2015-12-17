@@ -63,4 +63,5 @@ Rails.application.routes.draw do
   #   end
   resources :users
   resources :plugins
+  resources :categories
 end
