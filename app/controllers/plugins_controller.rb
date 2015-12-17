@@ -13,6 +13,7 @@ class PluginsController < ApplicationController
 	def create
 		byebug
     @plugin = current_user.plugins.new(plugin_params)
+    @plugin.categories.new(params[:plugin][:categories_attributes][:"0"][:name])
    
      if @plugin.save
      	redirect_to @plugin #show_path -- show.
@@ -43,7 +44,8 @@ class PluginsController < ApplicationController
 
 	private
 	def plugin_params
-		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [:name, :description, :_destroy])
+		# params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [:name, :description, :_destroy])
+		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [])
 	end
 
 	def set_plugin

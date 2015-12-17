@@ -31,11 +31,21 @@
         <% form_categories = Category.all %>
           <% form_categories.each do |cat| %>
             <!-- <li><%= check_box_tag cat.name %><%= cat.name %><br></li> -->
-            <li><%= category.check_box :name, {multiple: true, value: cat.name}, cat.name, nil %><%= cat.name %><br></li>
+            <li><%= category.check_box :name, {multiple: true}, cat.name, nil %><%= cat.name %><br></li>
           <% end %>
       <% end %>
   </ul>
 </p>
+
+<div class="field">
+  <%= f.label "choose from current categories" %><br />
+  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+</div>
 
 <p>
   <ul>
@@ -44,9 +54,6 @@
       <li>
         <%= category.label :name %>
         <%= category.text_field :name %>
-
-        <%= category.label :description %>
-        <%= category.text_field :description %>
       </li>
     <% end %>
   </ul>
