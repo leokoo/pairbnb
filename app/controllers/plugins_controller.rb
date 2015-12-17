@@ -11,6 +11,7 @@ class PluginsController < ApplicationController
 	end
 
 	def create
+		byebug
     @plugin = current_user.plugins.new(plugin_params)
    
      if @plugin.save
