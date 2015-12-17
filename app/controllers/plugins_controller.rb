@@ -7,6 +7,7 @@ class PluginsController < ApplicationController
 	
 	def new
 		@plugin = Plugin.new
+		@plugin.categories.build
 	end
 
 	def create
@@ -41,7 +42,7 @@ class PluginsController < ApplicationController
 
 	private
 	def plugin_params
-		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature)
+		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [:name, :description, :_destroy])
 	end
 
 	def set_plugin
