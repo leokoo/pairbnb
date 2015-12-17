@@ -24,9 +24,10 @@
   <%= f.text_area :plugin_description, size: "60x12" %>
 </p>
 
+
 <p>
   <ul>
-    <%= f.label :plugin_categories %>
+    <%= f.label :add_new_plugin_category %>
     <%= f.fields_for :categories do |category| %>
       <li>
         <%= category.label :name %>

@@ -1,0 +1,18 @@
+<p>
+	<strong>Name of Plugin : </strong>
+		<%= @plugin.plugin_name %><br>
+	<strong>Description : </strong>
+		<%= @plugin.plugin_description %><br>
+	<strong>Category </strong>
+		<% @plugin.categories.each do |category| %>
+		<%= category.name %><br>
+		<% end %> 
+	<strong>Website Address : </strong>
+		<%= @plugin.website_address %><br>
+	<strong>Features : </strong>
+		<%= @plugin.plugin_feature %><br>
+</p>
+</table>
+
+<%= link_to 'Edit', edit_plugin_path(@plugin) %> |
+<%= link_to 'Back', plugins_path %>
