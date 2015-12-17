@@ -30,22 +30,12 @@
       <%= f.fields_for :categories do |category| %>
         <% form_categories = Category.all %>
           <% form_categories.each do |cat| %>
-            <li><%= check_box_tag cat.name %><%= cat.name %><br></li>
-            <!-- <li><%= category.check_box :name, {value: cat.name} %><%= cat.name %><br></li> -->
+            <!-- <li><%= check_box_tag cat.name %><%= cat.name %><br></li> -->
+            <li><%= category.check_box :name, {multiple: true, value: cat.name}, cat.name, nil %><%= cat.name %><br></li>
           <% end %>
       <% end %>
   </ul>
 </p>
-
-<div class="field">
-  <%= f.label "Testing out category fields" %><br />
-  <%= f.collection_check_boxes :expertise_ids, Expertise.all, :id, :name do |b| %>
-    <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
-    </div>
-  <% end %>
-</div>
 
 <p>
   <ul>
