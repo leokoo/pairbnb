@@ -25,6 +25,20 @@
 </p>
 
 <p>
+  <ul>
+    <%= f.fields_for :categories do |category| %>
+      <li>
+        <%= category.label :name %>
+        <%= category.text_field :name %>
+
+        <%= category.label :description %>
+        <%= category.text_field :description %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
   <%= f.label :website_address %>
   <%= f.text_field :website_address %>
 </p>
