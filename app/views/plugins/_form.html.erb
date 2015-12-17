@@ -26,6 +26,7 @@
 
 <p>
   <ul>
+    <%= f.label :plugin_categories %>
     <%= f.fields_for :categories do |category| %>
       <li>
         <%= category.label :name %>
