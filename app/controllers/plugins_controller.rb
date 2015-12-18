@@ -11,9 +11,21 @@ class PluginsController < ApplicationController
 	end
 
 	def create
-		byebug
     @plugin = current_user.plugins.new(plugin_params)
-    @plugin.categories.new(params[:plugin][:categories_attributes][:"0"][:name])
+    # @plugin.categories.new(params[:plugin][:categories_attributes][:"0"][:name])
+    if params[:plugin][:categories_attributes][:"0"][:name]
+    	# byebug
+	    params[:plugin][:categories_attributes][:"0"][:name].each do |x|
+	    	@plugin.categories.new(name: x)
+	    end
+	  end
+
+		if params[:plugin][:categories_attributes][:"1"][:name]
+    	# byebug
+	    params[:plugin][:categories_attributes][:"1"][:name].downcase.scan(/\w+/).each do |x|
+	    	@plugin.categories.new(name: x)
+	    end
+	  end
    
      if @plugin.save
      	redirect_to @plugin #show_path -- show.
