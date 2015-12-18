@@ -16,7 +16,7 @@
 			<td><%= plugin.website_address %></td>
 			<td><%= plugin.plugin_feature %></td>
 			<% plugin.categories.each do |category| %>
-			<td><%= category.name %></td>
+			<td><%= category.name %><br></td>
 			<% end %> 
 			<td><%= link_to 'Show', plugin_path(plugin) %></td>
       <td><%= link_to 'Edit', edit_plugin_path(plugin) %></td>

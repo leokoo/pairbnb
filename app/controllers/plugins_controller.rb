@@ -13,17 +13,19 @@ class PluginsController < ApplicationController
 	def create
     @plugin = current_user.plugins.new(plugin_params)
     # @plugin.categories.new(params[:plugin][:categories_attributes][:"0"][:name])
-    if params[:plugin][:categories_attributes][:"0"][:name]
-    	# byebug
-	    params[:plugin][:categories_attributes][:"0"][:name].each do |x|
+		if params[:plugin][:categories_attributes][:"0"]
+	    params[:plugin][:categories_attributes][:"0"][:name].downcase.scan(/\w+/).each do |x|
 	    	@plugin.categories.new(name: x)
 	    end
 	  end
 
-		if params[:plugin][:categories_attributes][:"1"][:name]
+    if params[:plugin][:categories_attributes][:"1"]
     	# byebug
-	    params[:plugin][:categories_attributes][:"1"][:name].downcase.scan(/\w+/).each do |x|
-	    	@plugin.categories.new(name: x)
+	    params[:plugin][:categories_attributes][:"1"][:name].each do |x|
+	    	if Category.where(name: x).count > 0
+	    		Category.where(name: x)
+	    	else
+	    		@plugin.categories.new(name: x)
 	    end
 	  end
    

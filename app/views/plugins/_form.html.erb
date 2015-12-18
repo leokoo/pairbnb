@@ -26,6 +26,18 @@
 
 <p>
   <ul>
+    <%= f.label :add_new_plugin_category %>
+    <%= f.fields_for :categories do |category| %>
+      <li>
+        <%= category.label :name %>
+        <%= category.text_field :name %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <ul>
     <%= f.label :choose_from_current_plugin_categories %>
       <%= f.fields_for :categories do |category| %>
         <% form_categories = Category.all %>
@@ -34,28 +46,6 @@
             <li><%= category.check_box :name, {multiple: true}, cat.name, nil %><%= cat.name %><br></li>
           <% end %>
       <% end %>
-  </ul>
-</p>
-
-<!-- <div class="field">
-  <%= f.label "choose from current categories" %><br />
-  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
-    <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
-    </div>
-  <% end %>
-</div> -->
-
-<p>
-  <ul>
-    <%= f.label :add_new_plugin_category %>
-    <%= f.fields_for :categories do |category| %>
-      <li>
-        <%= category.label :name %>
-        <%= category.text_field :name %>
-      </li>
-    <% end %>
   </ul>
 </p>
 
