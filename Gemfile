@@ -35,6 +35,10 @@ gem 'figaro'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+# To upload images
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
