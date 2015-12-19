@@ -3,7 +3,8 @@
 <% if current_user %>
 	<%= link_to 'My Plugins', controller: 'plugins' %> <br>
 	<%= link_to 'New Plugin', new_plugin_path %><br>
-	<%= link_to 'Edit Profile' %><br>
+	<%= link_to 'All Users', users_path %><br>
+	<%= link_to 'Edit Profile', edit_user_path(current_user.id) %><br>
 <% else %>
 <% end %>
 

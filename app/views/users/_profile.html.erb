@@ -1,37 +1,26 @@
-<%= form_for @plugin do |f| %>
+<%= form_for @user do |f| %>
 
-  <% if @plugin.errors.any? %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@plugin.errors.count, "error") %> prohibited
+        <%= pluralize(@user.errors.count, "error") %> prohibited
         this article from being saved:
       </h2>
       <ul>
-        <% @plugin.errors.full_messages.each do |msg| %>
+        <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
 <p>
-  <%= f.label :plugin_name %>
-  <%= f.text_field :plugin_name %>
+  <%= f.label :name %>
+  <%= f.text_field :first_name %>
 </p>
 
 <p>
-  <%= f.label :plugin_description %>
-  <%= f.text_area :plugin_description, size: "60x12" %>
-</p>
-
-<p>
-  <%= f.label :website_address %>
-  <%= f.text_field :website_address %>
-</p>
-
-<p>
-  <%= f.label :plugin_feature %>
-  <%= f.text_area :plugin_feature, size: "60x12" %>
+  <%= f.label :email %>
+  <%= f.text_field :email, type: 'email' %>
 </p>
 
 <p>
