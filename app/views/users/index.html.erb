@@ -1,0 +1,28 @@
+<h1>Listing Plugins</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Website</th>
+		<th>Features</th>
+		<th>Categories</th>
+	</tr>
+
+	<% @plugins.each do |plugin| %>
+		<tr>
+			<td><%= link_to plugin.plugin_name, plugin %></td>
+			<td><%= plugin.plugin_description %></td>
+			<td><%= plugin.website_address %></td>
+			<td><%= plugin.plugin_feature %></td>
+			<% plugin.categories.each do |category| %>
+			<td><%= category.name %><br></td>
+			<% end %> 
+			<td><%= link_to 'Show', plugin_path(plugin) %></td>
+      <td><%= link_to 'Edit', edit_plugin_path(plugin) %></td>
+      <td><%= link_to 'Destroy', plugin_path(plugin),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
