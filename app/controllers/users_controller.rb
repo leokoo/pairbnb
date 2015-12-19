@@ -34,9 +34,8 @@ class UsersController < Clearance::UsersController
 		params.require(:user).permit(:first_name, :email)
 	end
 
-	def set_user
+	def set_users
 		@user = User.find(params[:id])
 	end
-end
 end
 

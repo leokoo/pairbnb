@@ -1,18 +1,9 @@
 <p>
-	<strong>Name of Plugin : </strong>
-		<%= @plugin.plugin_name %><br>
-	<strong>Description : </strong>
-		<%= @plugin.plugin_description %><br>
-	<strong>Category </strong>
-		<% @plugin.categories.each do |category| %>
-		<%= category.name %><br>
-		<% end %> 
-	<strong>Website Address : </strong>
-		<%= @plugin.website_address %><br>
-	<strong>Features : </strong>
-		<%= @plugin.plugin_feature %><br>
+	<strong>Name of User : </strong>
+		<%= @user.first_name %><br>
+	<strong>Email : </strong>
+		<%= @user.email %><br>
 </p>
-</table>
 
-<%= link_to 'Edit', edit_plugin_path(@plugin) %> |
-<%= link_to 'Back', plugins_path %>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,20 +1,15 @@
 <h1>Listing Users</h1>
 
-
-
+<table>
 	<% @users.each do |user| %>
 		<tr>
-			<td><%= plugin.plugin_name, plugin %></td>
-			<td><%= plugin.plugin_description %></td>
-			<td><%= plugin.website_address %></td>
-			<td><%= plugin.plugin_feature %></td>
-			<% plugin.categories.each do |category| %>
-			<td><%= category.name %><br></td>
-			<% end %> 
-			<td><%= link_to 'Show', plugin_path(plugin) %></td>
-      <td><%= link_to 'Edit', edit_plugin_path(plugin) %></td>
-      <td><%= link_to 'Destroy', plugin_path(plugin),
+			<td><%= user.first_name %></td>
+			<td><%= user.email %></td>
+			<td><%= link_to 'Show', user_path(user) %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Destroy', user_path(user),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 	<% end %>
+</table>
