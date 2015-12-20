@@ -62,7 +62,7 @@ class PluginsController < ApplicationController
 	private
 	def plugin_params
 		# params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [:name, :description, :_destroy])
-		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [])
+		params.require(:plugin).permit(:plugin_name, :plugin_description, :website_address, :plugin_feature, categories_attributes: [], images: [])
 	end
 
 	def set_plugin
