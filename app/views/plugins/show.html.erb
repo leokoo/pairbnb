@@ -11,6 +11,9 @@
 		<%= @plugin.website_address %><br>
 	<strong>Features : </strong>
 		<%= @plugin.plugin_feature %><br>
+		<%  @plugin.images.each do |url| %>
+			<%= image_tag url %>
+		<% end %>
 </p>
 </table>
 

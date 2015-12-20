@@ -36,7 +36,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 # To upload images
-gem 'carrierwave'
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 # gem 'rmagick'
 
