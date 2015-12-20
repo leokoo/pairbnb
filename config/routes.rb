@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :post_attachments
   root 'home#index'
   get '/dashboard' => 'users#dashboard', as: 'dashboard'
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
