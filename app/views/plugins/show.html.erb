@@ -12,7 +12,7 @@
 	<strong>Features : </strong>
 		<%= @plugin.plugin_feature %><br>
 		<%  @plugin.images.each do |url| %>
-			<%= image_tag url %>
+			<a href="<%= url %>"><%= image_tag (url.thumb) %></a>
 		<% end %>
 </p>
 </table>
