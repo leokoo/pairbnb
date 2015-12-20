@@ -3,8 +3,7 @@
 		<%= @user.first_name %><br>
 	<strong>Email : </strong>
 		<%= @user.email %><br>
-		<%= image_tag @user.image.url %>
-		<% byebug %>
+		<%= image_tag @user.image.thumb.url %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
