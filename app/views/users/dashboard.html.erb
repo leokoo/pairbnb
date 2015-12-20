@@ -5,6 +5,7 @@
 	<%= link_to 'New Plugin', new_plugin_path %><br>
 	<%= link_to 'All Users', users_path %><br>
 	<%= link_to 'Edit Profile', edit_user_path(current_user.id) %><br>
+	<%= image_tag current_user.image.url %>
 <% else %>
 <% end %>
 

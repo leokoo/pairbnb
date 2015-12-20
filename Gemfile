@@ -38,6 +38,7 @@ gem 'autoprefixer-rails'
 # To upload images
 gem 'carrierwave'
 gem 'mini_magick'
+# gem 'rmagick'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
